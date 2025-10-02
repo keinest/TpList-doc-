@@ -416,6 +416,7 @@ int main()
                         }
                         DisplayDclistFront(dc);
                         dc = destroyDclist(dc);
+                        stop();
                     }
                     break;
                     case 2:
@@ -446,6 +447,7 @@ int main()
                         }
                         DisplayDclistFront(dc);
                         dc = destroyDclist(dc);
+                        stop();
                     }
                     break;
                     case 0:
