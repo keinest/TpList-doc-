@@ -431,17 +431,18 @@ void DisplayClist(Clist cl)
     }
     if(cl -> head -> next == NULL)
     {
-        printf(" ->%7.2f -> \n\n",cl -> head -> data);
+        printf("%7.2f -> \n\n",cl -> head -> data);
         return;
     }      
     Node temp = cl -> head;
-    printf(" ->");
+    printf("%7.2f -> ",temp -> data);
+    temp = temp -> next;
     while(temp != cl -> head)
     {
         printf("%7.2f -> ",temp -> data);
         temp = temp -> next;
     }
-    printf("\n\n");
+    printf("NULL\n\n");
 }
 
 // Dstruction de la liste chaînée circulaire 
@@ -677,5 +678,6 @@ void stop()
     if(getchar() == '\n')
         getchar();
 }
+
 
 //==============================================================
