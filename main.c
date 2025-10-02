@@ -117,7 +117,7 @@ int main()
                                 printf("Element %d : ", i+1);
                                 scanf(" %99[^\n]", enter); 
                             }
-                            qu = appendQueueSort(qu, convert_value_enter(enter));
+                            qu = appendQueue(qu, convert_value_enter(enter));
                         }
                         
                         displayQueue(qu);
