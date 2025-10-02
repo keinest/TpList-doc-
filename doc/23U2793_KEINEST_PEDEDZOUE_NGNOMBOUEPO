@@ -1,0 +1,72 @@
+# Gestion des Listes Chaînées en C
+
+Ce projet est une application en C pour la gestion de différentes structures de données de listes chaînées. 
+Il permet aux utilisateurs de manipuler des listes simplement chaînées, doublement chaînées, et circulaires (simples et doubles) via un menu interactif.
+
+## Fonctionnalités
+
+Le programme offre les fonctionnalités suivantes pour chaque type de liste :
+
+* **Listes Simplement Chaînées :**
+    * [cite_start]Initialisation et destruction de listes[cite: 1].
+    * Insertion d'éléments en tant que file (FIFO).
+    * Suppression de toutes les occurrences d'une valeur spécifique.
+    * Insertion d'un élément dans une liste triée, en maintenant l'ordre.
+    * Tri d'une liste non triée.
+
+* **Listes Doublement Chaînées :**
+    * Initialisation et destruction de listes.
+    * Insertion d'un élément dans une liste triée.
+    * Affichage de la liste dans les deux sens (avant et arrière).
+
+* **Listes Circulaires (Simples et Doubles) :**
+    * Initialisation et destruction de listes.
+    * Insertion d'éléments en tête et en queue.
+
+## Structure du Projet
+
+Le projet est organisé de manière modulaire en plusieurs fichiers pour une meilleure lisibilité et maintenance :
+
+* `main.c` : Contient la logique principale du programme. Il gère l'affichage du menu utilisateur, la validation des entrées et l'appel des fonctions appropriées en fonction des choix de l'utilisateur.
+* [cite_start]`listes.h` : Le fichier d'en-tête qui déclare toutes les structures de données (`Node`, `Queue`, `Dnode`, `Dlist`, etc.) et les prototypes de toutes les fonctions utilisées dans le projet[cite: 1]. [cite_start]Cela permet de séparer les déclarations de l'implémentation[cite: 1].
+* `listes.c` : L'implémentation de toutes les fonctions de manipulation des listes chaînées. C'est ici que se trouvent les algorithmes pour l'initialisation, l'insertion, la suppression, le tri, et l'affichage des listes.
+* `Makefile` : Un script qui automatise la compilation du projet. Il définit les règles pour compiler les fichiers sources (`.c`) en fichiers objets (`.o`) puis pour lier ces objets afin de créer l'exécutable final.
+
+## Compilation et Exécution
+
+Pour compiler et exécuter le programme, vous pouvez utiliser le `Makefile` fourni. Assurez-vous d'avoir `gcc` installé sur votre système.
+
+1.  Ouvrez un terminal dans le répertoire du projet.
+2.  Compilez le programme en utilisant la commande `make` :
+    ```sh
+    make all
+    ```
+    Cela va créer l'exécutable nommé `gestion_listes`.
+
+3.  Lancez le programme :
+    ```sh
+    ./gestion_listes
+    ```
+    Ou, si vous souhaitez compiler et exécuter en une seule commande :
+    ```sh
+    make run
+    ```
+
+4.  Pour nettoyer les fichiers générés (exécutable et fichiers objets), utilisez :
+    ```sh
+    make clean
+    ```
+
+## Fonctions de Validation des Entrées
+
+Le programme inclut des fonctions robustes pour valider les entrées utilisateur afin d'éviter les erreurs d'exécution dues à des formats incorrects. Ces fonctions se trouvent dans `listes.c` et sont appelées dans `main.c`.
+
+* `veri_user_enter(char *str)` : Vérifie si une chaîne de caractères ne contient que des chiffres, la rendant apte à être convertie en un entier.
+* `veri_value_enter(char *str)` : Vérifie si une chaîne de caractères représente un nombre décimal valide (entier ou flottant, avec un seul point `.` et un signe optionnel).
+
+## Fonction de Suppression des Occurrences
+
+La fonction `deleteQueueOccurence(Queue qu, float search)` se trouve dans `listes.c` et est chargée de la suppression. Son implémentation gère deux cas distincts :
+
+1.  **Suppression en tête de liste** : Une boucle `while` est utilisée pour supprimer tous les nœuds en début de liste qui correspondent à la valeur recherchée.
+2.  **Suppression à l'intérieur de la liste** : Une boucle `while` parcourt le reste de la liste, et si un nœud correspond à la valeur, il est supprimé en re-liant le nœud précédent au nœud suivant.
