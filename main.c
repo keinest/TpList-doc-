@@ -344,8 +344,10 @@ int main()
                                 scanf(" %99[^\n]", enter); 
                             }
                             cl = insertInBack(cl, convert_value_enter(enter));
-                            DisplayClist(cl);
                         }
+                        DisplayClist(cl);
+                        stop();
+                        cl = destroyClist(cl);
                     }
                     break;
                     case 0:
