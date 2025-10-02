@@ -93,3 +93,11 @@ Si vous ne souhaitez pas utiliser `make`, vous pouvez compiler manuellement avec
 ```sh
 gcc -Wall -Wextra main.c listes.c -o gestion_listes
 
+**Contributeurs**
+
+.NGNOMBOUEPO PEDEDZOUE KEINEST
+.IKENG HENGA FLORENT DAVID 
+.NGUEFAH ZEUTCHA CAROL JUNIOR
+.ESSENGUE BILOA MICHEL VICTORIEN 
+.BIHOYA NSOH FRANCK EMMANNUEL 
+
