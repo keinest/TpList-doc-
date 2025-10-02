@@ -313,9 +313,10 @@ int main()
                                 printf("Element %d : ", i+1);
                                 scanf(" %99[^\n]", enter); 
                             }
-                            cl = insertInFront(cl, convert_value_enter(enter));
-                            DisplayClist(cl);
                         }
+                        DisplayClist(cl);
+                        stop();
+                        cl = destroyClist(cl);
                     }
                     break;
                     case 2:
